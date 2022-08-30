@@ -15,8 +15,6 @@ class dbManager{
 	public function __construct(){
 		try{
 			if ($this->DB = mysqli_connect($this->db_dbserver, $this->db_user, $this->db_pass, $this->db_dbname)){
-				
-				
 				return $this->DB;
 			}
 			else{
@@ -38,14 +36,6 @@ class dbManager{
 	public function select_data(){
 		$result=mysqli_query($this->DB,"select * from register");
  		return $result;
-		   // $select = array();  
-     //       $query = "SELECT * FROM register";  
-     //       $result = mysqli_query($this->DB, $query);
-     //       while($row = mysqli_fetch_assoc($result))  
-     //       {  
-     //            $select[] = $row;  
-     //       }  
-     //       return true;  
 	}
 
 	public function update_data($query){
