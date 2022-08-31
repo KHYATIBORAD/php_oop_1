@@ -1,18 +1,6 @@
 <?php
 include('connection.php'); 
-// if($DB->select_data("register")){
-  
-// }
-// else{
-//     echo mysqli_error();
-// }
-// $query = "SELECT * FROM register";
-// $sql =mysqli_query($DB,$query);
-// if ($sql) {
-// }else{
-// 	echo mysqli_error($DB);
-// }
- //$count = mysqli_num_rows($select);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,11 +18,10 @@ include('connection.php');
 				<table class="table table-bordered bg-light">
 					<thead>
 						<tr>
-							<th scope="col">Id</th>
+							<th scope="col">Sr. no</th>
+							<th scope="col">ID</th>
 							<th scope="col">Firstname</th>
 							<th scope="col">Lastname</th>
-							<th scope="col">password</th>
-							<th scope="col">cnfpassword</th>
 							<th scope="col">contact</th>
 							<th scope="col">email</th>
 							<th scope="col">gender</th>
@@ -43,34 +30,34 @@ include('connection.php');
 						</tr>
 					</thead>
 					<?php 
-					$sql=$select_data->select_data();
-					$count >0;
-						while($row =mysqli_fetch_assoc($sql)){
-							?>
-							<tr>
-								<td><?php echo $row['r_id'] ?></td>
-								<td><?php echo $row['firstname'] ?></td>
-								<td><?php echo $row['lastname'] ?></td>
-								<td><?php echo $row['password'] ?></td>
-								<td><?php echo $row['cnfpassword'] ?></td>
-								<td><?php echo $row['contact'] ?></td>
-								<td><?php echo $row['email'] ?></td>
-								<td><?php echo $row['gender'] ?></td>
-								<td><?php echo $row['country'] ?></td>
-								<form action="create.php" method="post">
-									<input type="hidden" name="r_id" value="<?= $row['r_id'] ?>">
-									<!-- <td><a href="delete.php?r_id=<?php echo $row['r_id']?>" class="btn btn-primary" >Delete</a></td> -->
-									<td><button type="submit" class="btn btn-secondary" >Update</button></td>
-								</form>
+					$sql=$DB->select_data();
+					$count = 1;
+					while($row =mysqli_fetch_assoc($sql)){
+						?>
+						<tr>
+							<td><?php echo $count; ?></td>
+							<td><?php echo $row['r_id'] ?></td>
+							<td><?php echo $row['firstname'] ?></td>
+							<td><?php echo $row['lastname'] ?></td>
+							<td><?php echo $row['contact'] ?></td>
+							<td><?php echo $row['email'] ?></td>
+							<td><?php echo $row['gender'] ?></td>
+							<td><?php echo $row['country'] ?></td>
+							<form action="create.php" method="post">
+								<input type="hidden" name="r_id" value="<?= $row['r_id'] ?>">
+								
+								<td><button type="submit" class="btn btn-secondary" >Update</button></td>
+							</form>
 
-								<form action="delete.php" method="post">
-									<input type="hidden" name="r_id" value="<?= $row['r_id'] ?>">
-									<!-- <td><a href="delete.php?r_id=<?php echo $row['r_id']?>" class="btn btn-primary" >Delete</a></td> -->
-									<td><button type="submit" class="btn btn-secondary" >Delete</button></td>
-								</form>
+							<form action="delete.php" method="post">
+								<input type="hidden" name="r_id" value="<?= $row['r_id'] ?>">
+								
+								<td><button type="submit" class="btn btn-secondary" >Delete</button></td>
+							</form>
 
-							</tr>
-							<?php 
+						</tr>
+						<?php 
+						$count++;
 						
 					}
 					?>

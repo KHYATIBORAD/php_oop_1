@@ -6,42 +6,36 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<title></title>
- <script type="text/javascript">
-        function validate(){
-        	var password=document.getElementById("password").value;
-        	var cnfpassword=document.getElementById("cnfpassword").value;
+	<script type="text/javascript">
+		function validate(){
+			var password=document.getElementById("password").value;
+			var cnfpassword=document.getElementById("cnfpassword").value;
 
-        	if(password != cnfpassword){
-        		alert("enter same password and cnfpassword");
-        		return false;
-        	}
-        	return true;
-        }
-    </script>
+			if(password != cnfpassword){
+				alert("enter same password and cnfpassword");
+				return false;
+			}
+			return true;
+		}
+	</script>
 
 </head>
 <body style="background-color: #d9d9d9;">
-	
-		<?php	
-		include('connection.php');
 
-		if (isset($_POST['r_id'])) {
-			$id = $_POST['r_id'];
+	<?php	
+	include('connection.php');
 
-			$select ="SELECT * FROM register WHERE r_id=$id";
-			$sql = mysqli_query($con,$select);
-			if($sql){
-//echo "sucess";
-			}else
-			{
-				echo mysqli_error();
-			}
+	$sql=$DB->update_select();
+	if($sql){
 
-			$row = mysqli_fetch_assoc($sql);
-		}
+	}
+	else{
+		echo mysqli_error();
+	}
+	$row=mysqli_fetch_assoc($sql);
 
-		?>
-	
+	?>
+
 	<form action="insert.php" method="POST">
 		<div class="container pt-5">
 
@@ -110,19 +104,20 @@
 				<br><br>
 
 				<div class="row">
-						<?php 
-						if(isset($_POST['r_id'])){
+					<?php 
+					if(isset($_POST['r_id'])){
 						?>
-							<input type="hidden" name="id" value="<?= $row['r_id'] ?>">
-							<button type="submit" class="btn btn-primary btn-block" name="submit" onclick="return validate()" >Edit</button>
+						<input type="hidden" name="id" value="<?= $row['r_id'] ?>">
+						<button type="submit" class="btn btn-primary btn-block" name="submit" onclick="return validate()" >Edit</button>
 						<?php
 					}
 					else
 					{
-					?>
-					<button type="edit" class="btn btn-primary btn-block" name="submit" onclick="return validate()" >Submit</button>
-					<?php
-				}
+						?>
+
+						<button type="edit" class="btn btn-primary btn-block" name="submit" onclick="return validate()" >Submit</button>
+						<?php
+					}
 					?>
 				</div>
 			</div>
