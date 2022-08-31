@@ -8,11 +8,11 @@
 	<title></title>
 </head>
 <body>
-	<div class="container">
+	<div class="container pt-5">
 		<div class="row">
 			<div class="col-md-6">
-				<h1 class="center">Application Login Page</h1>	
-					<h6 class="center">Login or register from here to access.</h6>
+				<img src="img/feed.jpg" style="height: 80%;">
+
 			</div>
 			<div class="col-md-6">
 				<form action="feedinsert.php" method="POST">
@@ -22,13 +22,13 @@
 							<br>
 							<div class="row">
 								<div class="form-group">
-									<label for="comment">comment</label>
-									<input type="text" class="form-control" id="comment"  placeholder="Enter your email..." name="comment" required autocomplete="off">
+									
+									<input type="text" class="form-control" id="comment"  placeholder="Enter your comment..." name="comment" required autocomplete="off">
 								</div>
 							</div><br>
 							
 							<div class="">
-								<button type="submit" class="btn btn-primary ">submit</button>
+								<button type="submit" class="btn btn-primary " name="submit">submit</button>
 							</div><br>
 							
 						</div>

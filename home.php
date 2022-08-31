@@ -38,6 +38,7 @@ session_start();
   			<ul>
 			
 			<li><a href="userlist.php" class="nav-link active " target="blank">User information</a></li>
+			<li><a href="feedback.php" class="nav-link active " target="blank">Feedback</a></li>
 		</ul>
 			</div>
 		</div>
