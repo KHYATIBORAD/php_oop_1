@@ -6,23 +6,10 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<title></title>
-	<script type="text/javascript">
-		function validate(){
-			var password=document.getElementById("password").value;
-			var cnfpassword=document.getElementById("cnfpassword").value;
-
-			if(password != cnfpassword){
-				alert("enter same password and cnfpassword");
-				return false;
-			}
-			return true;
-		}
-	</script>
-
 </head>
-<body style="background-color: #d9d9d9;">
 
-	<?php	
+<body style="background-color: #d9d9d9;">
+ <?php	
 	include('connection.php');
 
 	$sql=$DB->update_select();
@@ -56,11 +43,11 @@
 				<div class="row">
 					<div class="col-12 col-md-6">
 						<label class="form-lable">Password</label>
-						<input type="Password" name="password" class="form-control" required placeholder="create your Password" autocomplete="off" value="<?= $row['password'] ?? '' ?>" id="Password">
+						<input type="Password" name="password" class="form-control" id="password" placeholder="create your Password" autocomplete="off" value="<?= $row['password'] ?? '' ?>" required>
 					</div>
 					<div class="col-12 col-md-6">
 						<label class="form-lable">Confirm Password</label>
-						<input type="Password" name="cnfpassword" class="form-control" required placeholder="Confirm Password" autocomplete="off" value="<?= $row['cnfpassword'] ?? '' ?>" id="cnfpassword">
+						<input type="Password" name="cnfpassword" class="form-control" id="cnfpassword" placeholder="Confirm Password" autocomplete="off" value="<?= $row['cnfpassword'] ?? '' ?>" required>
 					</div>
 				</div>
 				<br>
@@ -108,14 +95,13 @@
 					if(isset($_POST['r_id'])){
 						?>
 						<input type="hidden" name="id" value="<?= $row['r_id'] ?>">
-						<button type="submit" class="btn btn-primary btn-block" name="submit" onclick="return validate()" >Edit</button>
+						<button type="submit" id="btnsubmit" class="btn btn-primary btn-block" name="submit" onclick="Validate()">Edit</button>
 						<?php
 					}
 					else
 					{
 						?>
-
-						<button type="edit" class="btn btn-primary btn-block" name="submit" onclick="return validate()" >Submit</button>
+						<button type="submit" id="btnsubmit" class="btn btn-primary btn-block" name="submit" onclick="Validate()">Submit</button>
 						<?php
 					}
 					?>
@@ -123,5 +109,18 @@
 			</div>
 		</div>
 	</form>
+	<script>
+		function Validate() {
+        var password = document.getElementById("password").value;
+        var cnfpassword = document.getElementById("cnfpassword").value;
+        if (password !== cnfpassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+        return true;
+    }
+		
+	</script>
+
 </body>
 </html>
