@@ -73,7 +73,7 @@ public function login_check($table, $email, $password){
 	return false;
 }
 
-// this is user update data to fatch data selection
+// this is user update data to fetch data selection
 public function update_select(){
 	$id = $_POST['r_id'];
 	$select =mysqli_query($this->DB,"SELECT * FROM register WHERE r_id='".$id."'");
