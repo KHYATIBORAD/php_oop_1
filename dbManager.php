@@ -65,7 +65,7 @@ public function login_check($table, $email, $password){
 	$row = mysqli_fetch_array($query);
 	if(!empty($row)){
 		$_SESSION['login'] = true;  
-		$_SESSION['id'] = $row['r_id'];  
+		$_SESSION['r_id'] = $row['r_id'];  
 		$_SESSION['email'] = $row['email'];  
 		$_SESSION['password'] = $row['password'];
 		return true;
@@ -75,15 +75,16 @@ public function login_check($table, $email, $password){
 
 // this is user update data to fatch data selection
 public function update_select(){
-	$id = $_SESSION['r_id'];
-	$select =mysqli_query($this->DB,"SELECT * FROM register WHERE r_id='$id'");
+	$id = $_POST['r_id'];
+	$select =mysqli_query($this->DB,"SELECT * FROM register WHERE r_id='".$id."'");
 	return $select;
 }
 
 
 // this is feedback comment insert method.
-public function feedback_data($id,$comment){
-	$id=$_SESSION['id'];
+public function feedback_data($comment){
+	$id=$_SESSION['r_id'];
+	
 	$query=mysqli_query($this->DB,"insert into feedback(r_id,comment) values('$id','$comment')");
 	return $query;
 }

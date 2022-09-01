@@ -1,8 +1,9 @@
 <?php 
 session_start();
-	if(!isset($_SESSION['login']) && !$_SESSION['login']){
-		header("location:index.php");
-	}
+
+if(!isset($_SESSION['login']) && !$_SESSION['login']){
+	header("location:index.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -17,38 +18,38 @@ session_start();
 <body style="background-color: #e6e6e6;">
 	<div class="bg-light"><h3 class="text-center fw-semibold fst-italic">Corbital Technologies</h3>
 
-	<nav class="navbar  bg-light">
-		
-		<a class="btn btn-light" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-  		MENU
-		</a>
-		<div class="row  text-end">
+		<nav class="navbar  bg-light">
+			
+			<a class="btn btn-light" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+				MENU
+			</a>
+			<div class="row  text-end">
 				<div class="col-6 col-md-12">
 					<form action="logout.php">
 						<button type="logout" class="btn btn-primary btn-block" id="logout">Logout</button>
 					</form>
 				</div>
 			</div>
-		<div class="offcanvas offcanvas-start" id="offcanvasExample">
-			<div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasExampleLabel">MENU</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-  			<ul>
-			
-			<li><a href="userlist.php" class="nav-link active " target="blank">User information</a></li>
-			<li><a href="feedback.php" class="nav-link active " target="blank">Feedback</a></li>
-		</ul>
+			<div class="offcanvas offcanvas-start" id="offcanvasExample">
+				<div class="offcanvas-header">
+					<h5 class="offcanvas-title" id="offcanvasExampleLabel">MENU</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+				</div>
+				<div class="offcanvas-body">
+					<ul>
+						
+						<li><a href="userlist.php" class="nav-link active " target="blank">User information</a></li>
+						<li><a href="feedback.php" class="nav-link active " target="blank">Feedback</a></li>
+					</ul>
+				</div>
 			</div>
-		</div>
 
-	</nav>
-</div>
+		</nav>
+	</div>
 
-		<div>
-			<img src="img/1.jpg" class="rounded float-end" style="width:90vh;">
-			
-		</div>
+	<div>
+		<img src="img/1.jpg" class="rounded float-end" style="width:90vh;">
+		
+	</div>
 </body>
 </html>

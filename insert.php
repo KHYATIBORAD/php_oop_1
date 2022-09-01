@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("connection.php");
 if(isset($_POST['submit']) && !isset($_POST['id']) ){
 	$firstname=$_POST['firstname'];
@@ -20,9 +21,9 @@ if(isset($_POST['submit']) && !isset($_POST['id']) ){
 	}
 }
 else{
-	
+
 	if(isset($_POST['submit']) && isset($_POST['id'])){
-		$id = $_POST['id'];
+		$id = $_SESSION['r_id'];
 		$firstname= $_POST['firstname'];
 		$lastname= $_POST['lastname'];
 		$contact =$_POST['contact'];
