@@ -9,21 +9,18 @@
 </head>
 <body>
 	<div class="container pt-5">
-		<div class="row">
-			<div class="col-md-6">
-				<img src="img/feed.jpg" style="height: 80%;">
-
-			</div>
-			<div class="col-md-6">
+		<div class="row bg-light">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
 				<form action="feedinsert.php" method="POST">
 					<div class="container-sm pt-5">
-						<div class=" p-5 border bg-light">
+						<div class=" p-5">
 							<h4 class="text-center">feedback</h4>
 							<br>
 							<div class="row">
 								<div class="form-group">
-									
-									<input type="text" class="form-control" id="comment"  placeholder="Enter your comment..." name="comment" required autocomplete="off">
+								  <textarea class="form-control" id="comment" rows="3" name="comment" placeholder="Enter comment....."></textarea>
+
 								</div>
 							</div><br>
 							
@@ -33,9 +30,9 @@
 							
 						</div>
 					</div>
-
 				</form>
-			</div>			
+			</div>	
+			<div class="col-sm-4"></div>		
 		</div>
 	</div>
 

@@ -40,6 +40,7 @@ if(!isset($_SESSION['login']) && !$_SESSION['login']){
 						
 						<li><a href="userlist.php" class="nav-link active " target="blank">User information</a></li>
 						<li><a href="feedback.php" class="nav-link active " target="blank">Feedback</a></li>
+						<li><a href="viewfeedback.php" class="nav-link active " target="blank">Comment</a></li>
 					</ul>
 				</div>
 			</div>
