@@ -11,6 +11,3 @@ if (isset($_POST['submit']) && !isset($_POST['id'])) {
 	else{
 		echo mysqli_error($DB);
 	}
-}
-
-?>

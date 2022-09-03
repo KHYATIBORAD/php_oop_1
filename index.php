@@ -11,9 +11,8 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6">
-				<h1 class="center">Application Login Page</h1>	
-				<h6 class="center">Login or register from here to access.</h6>
+			<div class="col-md-6 pt-5">
+				<img src="img/log1.png" style="height: 60%;">
 			</div>
 			<div class="col-md-6">
 				<form action="loginsert.php" method="POST">

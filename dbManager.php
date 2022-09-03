@@ -100,7 +100,7 @@ class dbManager{
 		}
 	}
 
-	//delete records
+	//feedback delete records
 	public function deleteRecord($delid){
 		$sql="DELETE FROM feedback WHERE f_id='$delid'";
 		$result=$this->DB->query($sql);
@@ -108,6 +108,59 @@ class dbManager{
 			header('location:viewfeedback.php');
 		}else{
 			echo "Error".$sql."<br>".$this->DB->error;
+		}
+	}
+
+	//devloper detail insert
+	public function devloperinsert($post){
+		$id=$_SESSION['r_id'];
+		$firstname=$_POST['firstname'];
+		$lastname=$_POST['lastname'];
+		$gender=$_POST['gender'];
+		$experience=$_POST['experience'];
+		$language=$_POST['language'];
+		$project=$_POST['project'];
+
+		$sql="INSERT INTO devloper(r_id,firstname,lastname,gender,experience,language,project) VALUES('$id','$firstname','$lastname','$gender','$experience','$language','$project')";
+		$result=$this->DB->query($sql);
+		if($result){
+			header("location:home.php");
+		}else{
+			echo mysqli_error();
+		}
+
+	}
+
+	//display devloper record
+	public function diplayDevloper(){
+		$sql="SELECT * FROM devloper";
+		$result=$this->DB->query($sql);
+		if($result->num_rows>0){
+			while($row=$result->fetch_assoc()){
+				$data[]=$row;
+			}
+			return $data;
+		}
+	}
+
+	//Delete devloper record
+	public function del_devloper($delid){
+		$sql="DELETE FROM devloper WHERE d_id='$delid'";
+		$result=$this->DB->query($sql);
+		if($result){
+			header('location:viewdevloper.php');
+		}else{
+			echo "Error".$sql."<br>".$this->DB->error;
+		}
+	}
+
+	//Select devloper data
+	public function select_devdata($editid){
+		$sql="SELECT * FROM devloper WHERE d_id='$editid'"; 
+		$result=$this->DB->query($sql);
+		if($result->num_rows==1){
+			$row=$result->fetch_assoc();
+			return $row;
 		}
 	}
 }
