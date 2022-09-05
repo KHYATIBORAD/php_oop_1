@@ -41,13 +41,13 @@ class dbManager{
 	public function update_data($firstname,$lastname,$contact,$email,$gender,$country){
 		$id=$_POST['id'];
 		$update=mysqli_query($this->DB,"UPDATE register SET
-	                     firstname='$firstname',
-	                     lastname  = '$lastname',
-	                     contact = '$contact',
-	                     email    = '$email',
-	                     gender    = '$gender',
-	                     country    = '$country'
-	                     WHERE r_id = '$id'");
+		                     firstname='$firstname',
+		                     lastname  = '$lastname',
+		                     contact = '$contact',
+		                     email    = '$email',
+		                     gender    = '$gender',
+		                     country    = '$country'
+		                     WHERE r_id = '$id'");
 		return $update;
 	}
 
@@ -83,7 +83,7 @@ class dbManager{
 	// this is feedback comment insert method.
 	public function feedback_data($comment){
 		$id=$_SESSION['r_id'];
-	
+		
 		$query=mysqli_query($this->DB,"insert into feedback(r_id,comment) values('$id','$comment')");
 		return $query;
 	}
@@ -161,6 +161,25 @@ class dbManager{
 		if($result->num_rows==1){
 			$row=$result->fetch_assoc();
 			return $row;
+		}
+	}
+
+
+	//update records
+	public function updateRecord($post){
+		$firstname=$_POST['firstname'];
+		$lastname=$_POST['lastname'];
+		$gender=$_POST['gender'];
+		$experience=$_POST['experience'];
+		$language=$_POST['language'];
+		$project=$_POST['project'];
+		$editid=$_POST['hid'];
+		$sql="UPDATE devloper SET firstname='$firstname',lastname='$lastname',gender='$gender',experience='$experience',language='$language',project='$project' WHERE d_id='$editid'";
+		$result=$this->DB->query($sql);
+		if($result){
+			header("location:viewdevloper.php");
+		}else{
+			echo "Error".$sql."<br>".$this->DB->error;
 		}
 	}
 }

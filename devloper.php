@@ -4,6 +4,11 @@ require_once('connection.php');
 if(isset($_POST['submit'])){
 	$DB->devloperinsert($_POST);
 }
+
+//update Record
+if(isset($_POST['update'])){
+	$DB->updateRecord($_POST);
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -51,13 +56,13 @@ if(isset($_POST['submit'])){
 								<div class="col-12 col-md-6">
 									<label class="form-lable " for="genderl">Gender</label><br>
 
-									<input class="form-check-input" type="radio" name="gender" id="female" value="Female" value="<?= $myrecord['gender'] ?? '' ?>">
+									<input class="form-check-input" type="radio" name="gender" id="female" value="Female" <?php if($myrecord['gender'] == 'Female') { echo 'checked'; } ?>>
 									<label class="form-label form-check-inline" for="female">
 										Female
 									</label><br>
 
 
-									<input class="form-check-input" type="radio" name="gender" id="male" value="Male" value="<?= $myrecord['gender'] ?? '' ?>">
+									<input class="form-check-input" type="radio" name="gender" id="male" value="Male" <?php if($myrecord['gender'] == 'Male') { echo 'checked'; } ?>>
 									<label class="form-label form-check-inline" for="male">
 										Male
 									</label>
@@ -92,7 +97,7 @@ if(isset($_POST['submit'])){
 						</div>
 					</div>
 				</form>
-				<?phpUpdate			}else{
+				<?php		}else{
 				?>
 			<form action="devloper.php" method="POST">
 					<div class="container pt-4">
