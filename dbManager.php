@@ -143,7 +143,7 @@ class dbManager{
 		}
 	}
 
-	//Delete devloper record
+	//Delete devloper recor
 	public function del_devloper($delid){
 		$sql="DELETE FROM devloper WHERE d_id='$delid'";
 		$result=$this->DB->query($sql);

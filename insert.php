@@ -13,7 +13,8 @@ if(isset($_POST['submit']) && !isset($_POST['id']) ){
 	$sql=$DB->insert_data($firstname,$lastname,$password,$cnfpassword,$contact,$email,$gender,$country);
 	if($sql)
 	{
-		header('location:index.php');
+		//header('location:index.php');
+		header('location:create.php');
 	}
 	else
 	{

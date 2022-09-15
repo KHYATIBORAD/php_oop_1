@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/custom.css">
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jQuery-3.6.1.js"></script>
 	<title></title>
 </head>
 
@@ -35,6 +36,9 @@
 				<img class="image" src="img/reg1.jpg" style="height: 30%;">
 			</div>
 			<div class="col-6">
+				<div id="alert1" class="alert alert-success" role="alert">
+					
+				</div>
 				<form action="insert.php" method="POST">
 					<div class="container pt-4">
 
@@ -137,6 +141,16 @@
 			return true;
 		}
 		
+	</script>
+	<script>
+		$(document).ready(function() {
+			
+			 $('#alert1').hide();
+			 $('#form').submit(function (e) {
+			 	$('#alert1').text('Registration successfully..!');
+        	});
+			
+		});
 	</script>
 
 </body>

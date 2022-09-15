@@ -6,8 +6,10 @@ if (isset($_POST['submit']) && !isset($_POST['id'])) {
 	echo $comment=$_POST['comment'];
 	$sql=$DB->feedback_data($comment);
 	if ($sql) {
-		header('location:home.php');
+		header('location:feedback.php?msg=success');
 	}
 	else{
 		echo mysqli_error($DB);
 	}
+}
+?>
