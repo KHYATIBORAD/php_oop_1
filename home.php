@@ -20,7 +20,7 @@ if(!isset($_SESSION['login']) && !$_SESSION['login']){
 
 		<nav class="navbar  bg-light">
 			
-			<a class="btn btn-info" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+			<a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
 				MENU
 			</a>
 			<div class="row  text-end">
@@ -43,7 +43,7 @@ if(!isset($_SESSION['login']) && !$_SESSION['login']){
 						<li><a href="viewfeedback.php" class="nav-link active " target="blank">feedback information</a></li>
 						<li><a href="devloper.php" class="nav-link active " target="blank">Devloper Detail</a></li>
 						<li><a href="viewdevloper.php" class="nav-link active " target="blank">Devloper information</a></li>
-						<li><a href="modal.php" class="nav-link active " target="blank">modal</a></li>
+						
 					</ul>
 				</div>
 			</div>

@@ -1,4 +1,4 @@
-m ei5<?php
+<?php
 include('connection.php'); 
 
 ?>
@@ -46,13 +46,13 @@ include('connection.php');
 							<form action="create.php" method="post">
 								<input type="hidden" name="r_id" value="<?= $row['r_id'] ?>">
 								
-								<td><button type="submit" class="btn btn-secondary" >Update</button></td>
+								<td><button type="submit" class="btn btn-primary" >Update</button></td>
 							</form>
 
 							<form action="delete.php" method="post">
 								<input type="hidden" name="r_id" value="<?= $row['r_id'] ?>">
 								
-								<td><button type="submit" class="btn btn-secondary" >Delete</button></td>
+								<td><button type="submit" class="btn btn-primary" >Delete</button></td>
 							</form>
 
 						</tr>

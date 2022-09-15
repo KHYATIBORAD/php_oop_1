@@ -17,9 +17,9 @@
 <body>
 	<div class="container">
 		<div class="row">
-				<div class="col-6 col-md-12 bg-light p-lg-5">
+				<div class="col-6 col-md-12  p-lg-5">
 				<div class="center">
-					<h3>Comment</h3>
+					<h3 class="text-center">Comment</h3><br>
 					<table class="table table-bordered">
 						<tr>
 							<th>S.No</th>

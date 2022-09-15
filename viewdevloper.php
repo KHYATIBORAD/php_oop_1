@@ -20,6 +20,7 @@
 		<div class="row">
 			<div class="col-6 col-md-12">
 				<table class="table table-bordered bg-light">
+					<h3 class="text-center">Devloper data</h3><br>
 					<tr>
 						<th>Sr.no</th>
 						<th>Firstname</th>
