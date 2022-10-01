@@ -1,5 +1,5 @@
 <?php 
-	require_once('connection.php');
+	require_once('database_connection/connection.php');
 	if(isset($_GET['deleteid'])){
 		$delid=$_GET['deleteid'];
 		$DB->del_devloper($delid);
@@ -10,9 +10,9 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/custom.css">
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 	<title></title>
 </head>
 <body>

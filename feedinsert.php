@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('connection.php');
+require_once('database_connection/connection.php');
 if (isset($_POST['submit']) && !isset($_POST['id'])) {
 	echo $id=$_SESSION['r_id'];
 	echo $comment=$_POST['comment'];

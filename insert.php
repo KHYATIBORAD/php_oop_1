@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("connection.php");
+require_once("database_connection/connection.php");
 if(isset($_POST['submit']) && !isset($_POST['id']) ){
 	$firstname=$_POST['firstname'];
 	$lastname=$_POST['lastname'];

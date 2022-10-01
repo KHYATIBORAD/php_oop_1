@@ -41,8 +41,8 @@ if(!isset($_SESSION['login']) && !$_SESSION['login']){
 						<li><a href="devloper.php" class="nav-link active " target="blank">Devloper Detail</a></li>
 						<li><a href="viewdevloper.php" class="nav-link active " target="blank">Devloper information</a></li>
 						<li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="nav-link active " target="blank">customer</a></li>
-						<li><a href="customer_ajax.php" class="nav-link active " target="blank">customer_ajax</a></li>
-						<li><a href="ajax_example.php" class="nav-link active " target="blank">ajax_example</a></li>
+						<li><a href="ajax_program/customer_ajax.php" class="nav-link active " target="blank">customer_ajax</a></li>
+						<li><a href="ajax_program/ajax_example.php" class="nav-link active " target="blank">ajax_example</a></li>
 
 					</ul>
 				</div>

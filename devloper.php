@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('connection.php');
+require_once('database_connection/connection.php');
 if(isset($_POST['submit'])){
 	$DB->devloperinsert($_POST);
 }
