@@ -9,7 +9,6 @@
 	<script type="text/javascript" src="assets/js/jQuery-3.6.1.js"></script>
 	<title></title>
 </head>
-
 <body style="background-color: #979797;">
 	<?php	
 	include('connection.php');
@@ -17,31 +16,24 @@
 	if(isset($_POST['r_id'])) {
 		$sql=$DB->update_select();
 		if($sql){
-
 		}
 		else{
 			echo mysqli_error();
 		}
 		$row=mysqli_fetch_assoc($sql);
-
 	}
-
 	?>
-
 	<!-- Container -->
 	<div class="container ">
 		<div class="row">
 			<div class="col-6 pt-5">
-				
 				<img class="image" src="img/reg1.jpg" style="height: 30%;">
 			</div>
 			<div class="col-6">
-				<div id="alert1" class="alert alert-success" role="alert">
-					
+				<div id="alert1" class="alert alert-success" role="alert">	
 				</div>
 				<form action="insert.php" method="POST">
 					<div class="container pt-4">
-
 						<div class=" p-5 border bg-light">
 							<h4 class="text-center">Registration Form</h4>
 							<br>
@@ -92,7 +84,6 @@
 									<label class="form-label form-check-inline" for="male">
 										Male
 									</label>
-
 								</div>
 								<div class="col-12 col-md-6">
 									<label class="form-lable">Country</label>
@@ -105,7 +96,6 @@
 								</div>
 							</div>
 							<br><br>
-
 							<div class="row">
 								<?php 
 								if(isset($_POST['r_id'])){
@@ -128,8 +118,6 @@
 			</div>
 		</div>
 	</div>
-
-	
 	<script>
 		function Validate() {
 			var password = document.getElementById("password").value;
@@ -140,18 +128,14 @@
 			}
 			return true;
 		}
-		
 	</script>
 	<script>
 		$(document).ready(function() {
-			
-			 $('#alert1').hide();
-			 $('#form').submit(function (e) {
-			 	$('#alert1').text('Registration successfully..!');
-        	});
-			
+			$('#alert1').hide();
+			$('#form').submit(function (e) {
+				$('#alert1').text('Registration successfully..!');
+			});
 		});
 	</script>
-
 </body>
 </html>

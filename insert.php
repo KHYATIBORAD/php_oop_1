@@ -13,7 +13,6 @@ if(isset($_POST['submit']) && !isset($_POST['id']) ){
 	$sql=$DB->insert_data($firstname,$lastname,$password,$cnfpassword,$contact,$email,$gender,$country);
 	if($sql)
 	{
-		//header('location:index.php');
 		header('location:create.php');
 	}
 	else
@@ -22,7 +21,6 @@ if(isset($_POST['submit']) && !isset($_POST['id']) ){
 	}
 }
 else{
-
 	if(isset($_POST['submit']) && isset($_POST['id'])){
 		$id = $_SESSION['r_id'];
 		$firstname= $_POST['firstname'];
@@ -40,5 +38,4 @@ else{
 		echo  $DB->error;
 	}
 }
-
 ?>

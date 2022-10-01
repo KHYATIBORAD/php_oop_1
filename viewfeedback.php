@@ -39,7 +39,6 @@
 								<td><?php echo $value['email']; ?></td>
 								<td><?php echo $value['comment']; ?></td>
 								<td>
-									
 									<a href="viewfeedback.php" class="btn btn-primary">Delete</a>
 								</td>
 							</tr>
