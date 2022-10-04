@@ -25,6 +25,7 @@ $(document).ready(function(){
 		}).done(function(res) {
 			$("#registration_form").trigger('reset');
 			load_html_data("retrive_data_ajax.php", "get");
+			location.reload();
 		});
 		}	
 	});

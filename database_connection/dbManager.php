@@ -37,6 +37,19 @@ class dbManager{
 		return $result;
 	}
 
+	// this is select email for email already exists 
+	public function select_email(){
+		$email = $_POST['email'];
+		$result=mysqli_query($this->DB,"SELECT * FROM register WHERE email = '$email'");
+		return $result;
+	}
+
+	// select option state ajax
+	public function select_state(){
+		$result=mysqli_query($this->DB,"SELECT * FROM ajax_state");
+		return $result;
+	}
+
 	//this is user data updation
 	public function update_data($firstname,$lastname,$contact,$email,$gender,$country){
 		$id=$_POST['id'];
@@ -55,7 +68,6 @@ class dbManager{
 	public function delete_data(){
 		$id=$_POST['r_id'];
 		$delete=mysqli_query($this->DB,"DELETE FROM register WHERE r_id= '$id' ");
-
 		return $delete;
 	}
 

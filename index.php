@@ -11,13 +11,13 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 pt-5">
-				<img src="img/log1.png" style="height: 60%;">
+			<div class="col-8 pt-5">
+				<img src="img/log1.png" style="height: 80%;">
 			</div>
-			<div class="col-md-6">
+			<div class="col-4">
 				<form action="loginsert.php" method="POST">
 					<div class="container-sm pt-5">
-						<div class=" p-5 border bg-light">
+						<div class=" p-5 border rounded-5 bg-light">
 							<h4 class="text-center">Login</h4>
 							<br>
 							<div class="row">

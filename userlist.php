@@ -1,6 +1,5 @@
 <?php
 include('database_connection/connection.php'); 
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -45,20 +44,15 @@ include('database_connection/connection.php');
 							<td><?php echo $row['country'] ?></td>
 							<form action="create.php" method="post">
 								<input type="hidden" name="r_id" value="<?= $row['r_id'] ?>">
-								
-								<td><button type="submit" class="btn btn-primary" >Update</button></td>
+							<td><button type="submit" class="btn btn-primary" >Update</button></td>
 							</form>
-
 							<form action="delete.php" method="post">
 								<input type="hidden" name="r_id" value="<?= $row['r_id'] ?>">
-								
-								<td><button type="submit" class="btn btn-primary" >Delete</button></td>
+							<td><button type="submit" class="btn btn-primary" >Delete</button></td>
 							</form>
-
 						</tr>
 						<?php 
-						$count++;
-						
+						$count++;	
 					}
 					?>
 				</table>

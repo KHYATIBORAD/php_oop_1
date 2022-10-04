@@ -11,7 +11,7 @@
 </head>
 <body style="background-color: #979797;">
 	<?php	
-	include('connection.php');
+	include('database_connection/connection.php');
 
 	if(isset($_POST['r_id'])) {
 		$sql=$DB->update_select();
@@ -22,6 +22,12 @@
 		}
 		$row=mysqli_fetch_assoc($sql);
 	}
+
+	if(isset($_GET['msg'])) {
+		echo "<div class='alert alert-danger' role='alert'>
+			This email is already exists.
+			</div>";
+	}
 	?>
 	<!-- Container -->
 	<div class="container ">
@@ -30,11 +36,11 @@
 				<img class="image" src="img/reg1.jpg" style="height: 30%;">
 			</div>
 			<div class="col-6">
-				<div id="alert1" class="alert alert-success" role="alert">	
-				</div>
+				<!-- <div id="alert1" class="alert alert-success" role="alert">	
+				</div> -->
 				<form action="insert.php" method="POST">
-					<div class="container pt-4">
-						<div class=" p-5 border bg-light">
+					<div class="container pt-4 ">
+						<div class=" p-5 border rounded-5 bg-light">
 							<h4 class="text-center">Registration Form</h4>
 							<br>
 							<div class="row">
@@ -96,7 +102,7 @@
 								</div>
 							</div>
 							<br><br>
-							<div class="row">
+							<div class="row mb-3">
 								<?php 
 								if(isset($_POST['r_id'])){
 									?>
@@ -112,6 +118,10 @@
 								}
 								?>
 							</div>
+							<!-- <div class="row">
+								<div class="alert alert-dark text-light" id="msg" role="alert">
+								</div>
+							</div> -->
 						</div>
 					</div>
 				</form>
@@ -130,12 +140,10 @@
 		}
 	</script>
 	<script>
-		$(document).ready(function() {
-			$('#alert1').hide();
-			$('#form').submit(function (e) {
-				$('#alert1').text('Registration successfully..!');
-			});
-		});
+		window.onload = function() {
+			history.replaceState("", "", "create.php");
+		}
 	</script>
+		
 </body>
 </html>

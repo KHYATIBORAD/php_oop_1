@@ -10,14 +10,23 @@ if(isset($_POST['submit']) && !isset($_POST['id']) ){
 	$email=$_POST['email'];
 	$gender=$_POST['gender'];
 	$country=$_POST['country'];
-	$sql=$DB->insert_data($firstname,$lastname,$password,$cnfpassword,$contact,$email,$gender,$country);
-	if($sql)
-	{
-		header('location:create.php');
-	}
-	else
-	{
-		header('location:create.php');
+	$res =$DB->select_email();
+	if (mysqli_num_rows($res) > 0) {
+        $row = mysqli_fetch_assoc($res);
+        if($email==isset($row['email']))
+        {
+        	header('location:create.php?msg');
+        }
+	} else {
+		$sql=$DB->insert_data($firstname,$lastname,$password,$cnfpassword,$contact,$email,$gender,$country);
+		if($sql)
+		{
+			header('location:index.php');
+		}
+		else
+		{
+			header('location:create.php');
+		}
 	}
 }
 else{
@@ -29,7 +38,7 @@ else{
 		$email =$_POST['email'];
 		$gender =$_POST['gender'];
 		$country =$_POST['country'];
-		$sql=$DB->update_data($firstname,$lastname,$contact,$email,$gender,$country);
+		$sql=$DB->update_data($firstname,$lastname,$	contact,$email,$gender,$country);
 		if($sql== true){
 			header("location:userlist.php");
 		}else{
